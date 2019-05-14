@@ -21,14 +21,31 @@
         android:textSize="14sp"
         tools:text="private"/>
 
-    <Button
-        android:id="@+id/btn_privatekey"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bg_btn_copy"
-        android:text="复制私钥"
-        android:textColor="#333"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_copy_privatekey"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_copy"
+            android:text="复制私钥"
+            android:textColor="#333"/>
+
+        <Button
+            android:id="@+id/btn_copy_publickey"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_btn_copy"
+            android:text="复制公钥"
+            android:textColor="#333"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_publickey"
@@ -43,14 +60,32 @@
         android:textSize="14sp"
         tools:text="public"/>
 
-    <Button
-        android:id="@+id/btn_publickey"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/bg_btn_copy"
-        android:text="复制公钥"
-        android:textColor="#333"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_private_encode"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_copy"
+            android:text="私钥加密公钥解密"
+            android:textColor="#333"/>
+
+        <Button
+            android:id="@+id/btn_public_encode"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_btn_copy"
+            android:text="公钥加密私钥解密"
+            android:textColor="#333"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>

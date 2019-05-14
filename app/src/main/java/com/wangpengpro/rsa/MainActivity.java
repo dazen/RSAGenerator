@@ -29,10 +29,14 @@ public class MainActivity extends AppCompatActivity {
     TextView mTvPrivateKey;
     @BindView(R.id.tv_publickey)
     TextView mTvPublickey;
-    @BindView(R.id.btn_privatekey)
-    Button mBtnPrivatekey;
-    @BindView(R.id.btn_publickey)
-    Button mBtnPublickey;
+    @BindView(R.id.btn_copy_privatekey)
+    Button mBtnCopyPrivatekey;
+    @BindView(R.id.btn_copy_publickey)
+    Button mBtnCopyPublickey;
+    @BindView(R.id.btn_private_encode)
+    Button mBtnPrivateEncode;
+    @BindView(R.id.btn_public_encode)
+    Button mBtnPublicEncode;
     
     private ClipboardManager mClipboardManager;
     
@@ -53,17 +57,26 @@ public class MainActivity extends AppCompatActivity {
         mTvPublickey.setText(pemPair.getRight());
     }
     
-    @OnClick({R.id.btn_privatekey, R.id.btn_publickey})
+    @OnClick({R.id.btn_copy_privatekey, R.id.btn_copy_publickey, R.id.btn_private_encode, R.id
+            .btn_public_encode})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_privatekey:
+            case R.id.btn_copy_privatekey:
                 mClipboardManager.setPrimaryClip(ClipData.newPlainText("privateKey", mTvPrivateKey.getText
                         ()));
-                Toast.makeText(this,"复制成功",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "复制成功", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btn_publickey:
+            case R.id.btn_copy_publickey:
                 mClipboardManager.setPrimaryClip(ClipData.newPlainText("publicKey", mTvPublickey.getText()));
-                Toast.makeText(this,"复制成功",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "复制成功", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_private_encode:
+                
+                Toast.makeText(this, "开发中", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_public_encode:
+                
+                Toast.makeText(this, "开发中", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
